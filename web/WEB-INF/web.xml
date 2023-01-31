@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <servlet>
+        <servlet-name>VerkaufServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.VerkaufServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerkaufServlet</servlet-name>
+        <url-pattern>/VerkaufServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StornierungServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.StornierungServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StornierungServlet</servlet-name>
+        <url-pattern>/StornierungServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReservierungServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.ReservierungServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservierungServlet</servlet-name>
+        <url-pattern>/ReservierungServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ResetDatabaseServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.ResetDatabaseServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ResetDatabaseServlet</servlet-name>
+        <url-pattern>/ResetDatabaseServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>VerkaufEinesReserviertenTicketsServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.VerkaufEinesReserviertenTicketsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerkaufEinesReserviertenTicketsServlet</servlet-name>
+        <url-pattern>/VerkaufEinesReserviertenTicketsServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReservierungenAufhebenServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.ReservierungenAufhebenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReservierungenAufhebenServlet</servlet-name>
+        <url-pattern>/ReservierungenAufhebenServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>MysqlServlet</servlet-name>
+        <servlet-class>kartenverkauf.servlets.MysqlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MysqlServlet</servlet-name>
+        <url-pattern>/MysqlTest</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <exception-type>kartenverkauf.exceptions.VerkaufReserviertesTicketException</exception-type>
+        <location>/fehlerVerkaufResserviertesTicket.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>kartenverkauf.exceptions.ReservierbarGlobalFalseException</exception-type>
+        <location>/kartenverkaufResservierbarGlobalFalse.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>kartenverkauf.exceptions.BereitsReserviertException</exception-type>
+        <location>/bereitsResserviert.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>kartenverkauf.exceptions.BereitsVerkauftException</exception-type>
+        <location>/bereitsVerkauft.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/nullPointerException.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>kartenverkauf.exceptions.StornierungException</exception-type>
+        <location>/freierPlatzStornieren.jsp</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/ungültigeEingabe.jsp</location>
+    </error-page>
+</web-app>

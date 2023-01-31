@@ -1,0 +1,16 @@
+.frei {
+}
+
+.verkauft {
+    background-color: grey;
+}
+
+.reserviert {
+    text-decoration: underline;
+    color: darkred;
+    font-weight: bold;
+}
+
+.mytable {
+    width: 1.5rem;
+}

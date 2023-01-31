@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+    <Resource name="jdbc/kartenverkauf"
+              auth="Container" type="javax.sql.DataSource"
+              username="dbuser" password="dbuser"
+              url="jdbc:mysql://localhost:8889/kartenverkauf"
+              mayActive="20" maxIdle="10"
+              removeAbandoned="true" removeAbandonedTimeout="300"
+              logAbandoned="true"/>
+</Context>
